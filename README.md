@@ -8,6 +8,6 @@ Helps to choose perfect clothes for any weather.</br>
 
 ## What should I do?</br>
 1 Type your current temperature and considering this the program will pick up the perfect outfit for you 
-from awailable wardrobe options.</br>
+from available wardrobe options.</br>
 2 All the available options are in separate folders in lib/. </br>
-3 To add outfit create a new file in specific folder.
+3 To add outfit create a new file in the specific folder.
