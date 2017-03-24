@@ -5,20 +5,25 @@ class Wardrobe
     @current_temperature = current_temperature
   end
 
+  #
   def find_match(files_with_clothes)
     choice = []
-
     for i in files_with_clothes
       cloth = File.readlines(i).map(&:chomp)
+      #приводим температуру в читаемый формат и преобразуем в range
       temperature_range = cloth[2].split(", ")
-      temperature_range.map! { |element| element.gsub("+", "")}
       if (temperature_range[0].to_i..temperature_range[1].to_i).include?(@current_temperature)
-        cloth.delete_at(1)
+        cloth.delete_at(1) #в этом поле тип одежды, он нам не нужен в выводе
         choice << cloth
       end
     end
-    choice = choice.sample
-    return choice.flatten.join(" - ")
+
+    if choice.to_a.empty?
+      choice << "В шкафу нет подходящей вещи на такую температуру :("
+    else
+      choice = choice.sample #если одежды больше, чем 2, то выводим
+    end
+    choice.flatten.join(" - ")
   end
 
   def pick_headwear

@@ -6,8 +6,4 @@ class PrintResult
     puts "Штаны: #{clothes.pick_pants}"
     puts "Обувь: #{clothes.pick_footwear}"
   end
-
-  def weather_error
-    
-  end
 end
